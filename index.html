@@ -1,220 +1,289 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>M365 Copilot Adoption - Mohammed Nugdalla</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>M365 Copilot Adoption | Mohammed Nugdalla</title>
+  <meta name="description" content="How Mohammed Nugdalla can contribute to Microsoft 365 Copilot adoption: office-based preparation and analysis, field training and support, and bilingual Arabic/English delivery.">
+  <meta name="author" content="Mohammed Nugdalla">
+  <meta name="theme-color" content="#0f172a">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="M365 Copilot Adoption | Mohammed Nugdalla">
+  <meta property="og:description" content="Office work, field work and skills for M365 Copilot adoption. Available in English and Arabic.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f172a'/%3E%3Ctext x='32' y='42' font-family='Arial' font-size='28' font-weight='700' text-anchor='middle' fill='%2334d399'%3EMN%3C/text%3E%3C/svg%3E">
+
   <style>
-    .rtl { direction: rtl; text-align: right; }
-    .ltr { direction: ltr; text-align: left; }
+    :root {
+      --bg: #0b1120;
+      --bg-2: #111a2e;
+      --surface: rgba(30, 41, 59, .55);
+      --surface-solid: #1a2438;
+      --border: rgba(148, 163, 184, .18);
+      --text: #f1f5f9;
+      --muted: #94a3b8;
+      --blue: #60a5fa;
+      --amber: #fbbf24;
+      --green: #34d399;
+      --radius: 16px;
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f4f6fb;
+        --bg-2: #e9eef7;
+        --surface: rgba(255, 255, 255, .85);
+        --surface-solid: #ffffff;
+        --border: rgba(15, 23, 42, .12);
+        --text: #0f172a;
+        --muted: #536077;
+        --blue: #1d4ed8;
+        --amber: #b45309;
+        --green: #047857;
+      }
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100vh; padding: 1.25rem;
+      background: radial-gradient(1200px 600px at 80% -10%, var(--bg-2), var(--bg));
+      color: var(--text);
+      font: 400 1rem/1.6 system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans Arabic', 'Segoe UI Arabic', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    :focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; border-radius: 8px; }
+    button { font: inherit; color: inherit; cursor: pointer; }
+
+    .app { max-width: 56rem; margin: 0 auto; padding-block: 1.5rem; }
+    .top { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 1.75rem; }
+    h1 { margin: 0 0 .25rem; font-size: clamp(1.5rem, 4vw, 2rem); letter-spacing: -.01em; }
+    .subtitle { margin: 0; color: var(--muted); }
+    .author { margin: .35rem 0 0; color: var(--green); font-weight: 600; font-size: .95rem; }
+
+    .lang {
+      flex: none; padding: .45rem 1rem; border-radius: 999px; font-size: .9rem; font-weight: 600;
+      background: var(--surface-solid); border: 1px solid var(--border); transition: border-color .2s;
+    }
+    .lang:hover { border-color: var(--blue); }
+
+    [role="tablist"] { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1rem; }
+    [role="tab"] {
+      display: inline-flex; align-items: center; gap: .5rem; padding: .55rem 1.1rem; border-radius: 10px;
+      font-size: .9rem; font-weight: 600; background: var(--surface); border: 1px solid var(--border);
+      color: var(--muted); transition: background .2s, color .2s, border-color .2s;
+    }
+    [role="tab"]:hover { color: var(--text); }
+    [role="tab"][aria-selected="true"] { background: var(--text); color: var(--bg); border-color: var(--text); }
+    [role="tab"] svg { width: 1rem; height: 1rem; }
+
+    .panel {
+      background: var(--surface); border: 1px solid var(--border); border-radius: calc(var(--radius) + 4px);
+      padding: 1.5rem; backdrop-filter: blur(8px);
+    }
+    .panel-head { display: flex; align-items: center; gap: .6rem; margin-bottom: 1.1rem; }
+    .panel-head svg { width: 1.3rem; height: 1.3rem; }
+    .panel-head h2 { margin: 0; font-size: 1.1rem; }
+    .accent-blue { color: var(--blue); } .accent-amber { color: var(--amber); } .accent-green { color: var(--green); }
+
+    .grid { display: grid; gap: .8rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); list-style: none; margin: 0; padding: 0; }
+    .item {
+      background: var(--surface-solid); border: 1px solid var(--border); border-radius: 12px; padding: 1rem 1.1rem;
+      display: flex; gap: .8rem; align-items: flex-start;
+    }
+    .item .icon { font-size: 1.3rem; line-height: 1.3; }
+    .item h3 { margin: 0 0 .2rem; font-size: .95rem; }
+    .item p { margin: 0; color: var(--muted); font-size: .85rem; }
+    .item .proof { margin-top: .5rem; color: var(--green); font-style: italic; }
+
+    .note {
+      margin: 1.1rem 0 0; padding: .8rem 1rem; border-radius: 10px; font-size: .85rem;
+      border: 1px solid currentColor; background: color-mix(in srgb, currentColor 8%, transparent);
+    }
+
+    [dir="rtl"] .note, [dir="rtl"] .item { text-align: right; }
+    @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
   </style>
 </head>
-<body class="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 min-h-screen p-4">
-  <div id="app" class="max-w-4xl mx-auto"></div>
+<body>
+  <noscript><p style="text-align:center">Please enable JavaScript to view this page.</p></noscript>
+  <div class="app" id="app"></div>
 
   <script>
-    let lang = 'en';
-    let activeTab = 'office';
+    const ICONS = {
+      office: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>',
+      field: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>',
+      skills: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>'
+    };
+    const TAB_ORDER = ['office', 'field', 'skills'];
+    const ACCENT = { office: 'blue', field: 'amber', skills: 'green' };
 
     const content = {
       en: {
-        title: "M365 Copilot Adoption",
-        subtitle: "How I Can Contribute",
-        preparedBy: "Mohammed Nugdalla",
-        langToggle: "عربي",
-        tabs: { office: "Office Work", field: "Field Work", skills: "My Skills" },
-        officeTitle: "Office-Based Work",
-        fieldTitle: "Field-Based Work",
-        skillsTitle: "What I Bring",
-        officeNote: "Preparation, coordination, and analysis — supporting the team with the right materials and insights.",
-        fieldNote: "Direct user contact — training, support, feedback, and building relationships."
+        title: 'M365 Copilot Adoption',
+        subtitle: 'How I Can Contribute',
+        preparedBy: 'Mohammed Nugdalla',
+        langToggle: 'عربي',
+        tabs: { office: 'Office Work', field: 'Field Work', skills: 'My Skills' },
+        titles: { office: 'Office-Based Work', field: 'Field-Based Work', skills: 'What I Bring' },
+        notes: {
+          office: '💻 Preparation, coordination, and analysis — supporting the team with the right materials and insights.',
+          field: '👤 Direct user contact — training, support, feedback, and building relationships.'
+        }
       },
       ar: {
-        title: "تبني M365 Copilot",
-        subtitle: "كيف يمكنني المساهمة",
-        preparedBy: "محمد نقد الله",
-        langToggle: "English",
-        tabs: { office: "العمل المكتبي", field: "العمل الميداني", skills: "مهاراتي" },
-        officeTitle: "العمل المكتبي",
-        fieldTitle: "العمل الميداني",
-        skillsTitle: "ما أقدمه",
-        officeNote: "التحضير والتنسيق والتحليل — دعم الفريق بالمواد والرؤى المناسبة.",
-        fieldNote: "التواصل المباشر مع المستخدمين — التدريب والدعم والملاحظات وبناء العلاقات."
+        title: 'تبني M365 Copilot',
+        subtitle: 'كيف يمكنني المساهمة',
+        preparedBy: 'محمد نقد الله',
+        langToggle: 'English',
+        tabs: { office: 'العمل المكتبي', field: 'العمل الميداني', skills: 'مهاراتي' },
+        titles: { office: 'العمل المكتبي', field: 'العمل الميداني', skills: 'ما أقدمه' },
+        notes: {
+          office: '💻 التحضير والتنسيق والتحليل — دعم الفريق بالمواد والرؤى المناسبة.',
+          field: '👤 التواصل المباشر مع المستخدمين — التدريب والدعم والملاحظات وبناء العلاقات.'
+        }
       }
     };
 
-    const officeWork = {
-      en: [
-        { task: "Prepare training materials", desc: "Localize slide decks, guides, prompt libraries" },
-        { task: "Analyze adoption data", desc: "Review usage reports, identify trends, flag issues" },
-        { task: "Coordinate with team", desc: "Sync on upcoming sessions, share feedback" },
-        { task: "Update documentation", desc: "Maintain FAQ docs, use case libraries, success stories" },
-        { task: "Support client reporting", desc: "Help prepare progress reports and presentations" },
-        { task: "Schedule & logistics", desc: "Coordinate training sessions, bookings, invites" }
-      ],
-      ar: [
-        { task: "إعداد مواد التدريب", desc: "تعريب العروض والأدلة ومكتبات الأوامر" },
-        { task: "تحليل بيانات التبني", desc: "مراجعة تقارير الاستخدام، تحديد الاتجاهات، الإبلاغ عن المشاكل" },
-        { task: "التنسيق مع الفريق", desc: "التزامن حول الجلسات القادمة، مشاركة الملاحظات" },
-        { task: "تحديث التوثيق", desc: "صيانة وثائق الأسئلة الشائعة، مكتبات حالات الاستخدام، قصص النجاح" },
-        { task: "دعم تقارير العميل", desc: "المساعدة في إعداد تقارير التقدم والعروض" },
-        { task: "الجدولة واللوجستيات", desc: "تنسيق جلسات التدريب، الحجوزات، الدعوات" }
-      ]
+    const items = {
+      office: {
+        en: [
+          { title: 'Prepare training materials', desc: 'Localize slide decks, guides, prompt libraries' },
+          { title: 'Analyze adoption data', desc: 'Review usage reports, identify trends, flag issues' },
+          { title: 'Coordinate with team', desc: 'Sync on upcoming sessions, share feedback' },
+          { title: 'Update documentation', desc: 'Maintain FAQ docs, use case libraries, success stories' },
+          { title: 'Support client reporting', desc: 'Help prepare progress reports and presentations' },
+          { title: 'Schedule & logistics', desc: 'Coordinate training sessions, bookings, invites' }
+        ],
+        ar: [
+          { title: 'إعداد مواد التدريب', desc: 'تعريب العروض والأدلة ومكتبات الأوامر' },
+          { title: 'تحليل بيانات التبني', desc: 'مراجعة تقارير الاستخدام، تحديد الاتجاهات، الإبلاغ عن المشاكل' },
+          { title: 'التنسيق مع الفريق', desc: 'التزامن حول الجلسات القادمة، مشاركة الملاحظات' },
+          { title: 'تحديث التوثيق', desc: 'صيانة وثائق الأسئلة الشائعة، مكتبات حالات الاستخدام، قصص النجاح' },
+          { title: 'دعم تقارير العميل', desc: 'المساعدة في إعداد تقارير التقدم والعروض' },
+          { title: 'الجدولة واللوجستيات', desc: 'تنسيق جلسات التدريب، الحجوزات، الدعوات' }
+        ]
+      },
+      field: {
+        en: [
+          { icon: '🎯', title: 'Deliver training sessions', desc: 'Run hands-on Copilot workshops on-site' },
+          { icon: '🤝', title: 'User support', desc: 'Help users directly with questions and issues' },
+          { icon: '📋', title: 'Collect feedback', desc: 'Talk to real users, understand their needs' },
+          { icon: '⭐', title: 'Identify champions', desc: 'Spot enthusiastic users who can help others' },
+          { icon: '👔', title: 'Stakeholder meetings', desc: 'Brief managers on progress, address concerns' },
+          { icon: '🔧', title: 'Troubleshoot issues', desc: 'Work with IT to resolve access or technical problems' }
+        ],
+        ar: [
+          { icon: '🎯', title: 'تقديم جلسات التدريب', desc: 'إدارة ورش عمل Copilot العملية في الموقع' },
+          { icon: '🤝', title: 'دعم المستخدمين', desc: 'مساعدة المستخدمين مباشرة في أسئلتهم ومشاكلهم' },
+          { icon: '📋', title: 'جمع الملاحظات', desc: 'التحدث مع المستخدمين الحقيقيين، فهم احتياجاتهم' },
+          { icon: '⭐', title: 'تحديد الأبطال', desc: 'اكتشاف المستخدمين المتحمسين الذين يمكنهم مساعدة الآخرين' },
+          { icon: '👔', title: 'اجتماعات أصحاب المصلحة', desc: 'إطلاع المديرين على التقدم، معالجة المخاوف' },
+          { icon: '🔧', title: 'حل المشاكل التقنية', desc: 'العمل مع تقنية المعلومات لحل مشاكل الوصول أو التقنية' }
+        ]
+      },
+      skills: {
+        en: [
+          { icon: '💻', title: 'Technical Background', desc: 'Computer Science degree, Python, Java, SQL — I understand the technical side', proof: 'Built ML pipelines, API integrations, automation tools' },
+          { icon: '🤖', title: 'AI & Copilot Experience', desc: 'Hands-on experience with LLMs and prompt engineering', proof: 'Microsoft Copilot Ambassador, built AI-powered tools' },
+          { icon: '🎤', title: 'Training & Communication', desc: 'Can explain technical concepts in simple terms', proof: 'Delivered workshops, demos, and AI productivity sessions' },
+          { icon: '🌍', title: 'Bilingual (Arabic/English)', desc: 'Native Arabic speaker, fluent in English', proof: 'Can deliver content in both languages' },
+          { icon: '📊', title: 'Data & Reporting', desc: 'Comfortable with data analysis and creating reports', proof: 'Experience with data extraction, Excel pipelines, structured outputs' },
+          { icon: '🔄', title: 'Adaptable', desc: 'Can work independently or as part of a team', proof: 'Field interviewer experience, internship, project work' }
+        ],
+        ar: [
+          { icon: '💻', title: 'خلفية تقنية', desc: 'شهادة علوم حاسب، Python، Java، SQL — أفهم الجانب التقني', proof: 'بناء خطوط ML، تكاملات API، أدوات أتمتة' },
+          { icon: '🤖', title: 'خبرة AI و Copilot', desc: 'خبرة عملية مع نماذج اللغة وهندسة الأوامر', proof: 'سفير Microsoft Copilot، بناء أدوات مدعومة بالذكاء الاصطناعي' },
+          { icon: '🎤', title: 'التدريب والتواصل', desc: 'قادر على شرح المفاهيم التقنية بمصطلحات بسيطة', proof: 'قدمت ورش عمل وعروض توضيحية وجلسات إنتاجية AI' },
+          { icon: '🌍', title: 'ثنائي اللغة (عربي/إنجليزي)', desc: 'متحدث عربي أصلي، طليق في الإنجليزية', proof: 'قادر على تقديم المحتوى بكلتا اللغتين' },
+          { icon: '📊', title: 'البيانات والتقارير', desc: 'مرتاح مع تحليل البيانات وإنشاء التقارير', proof: 'خبرة في استخراج البيانات، خطوط Excel، مخرجات منظمة' },
+          { icon: '🔄', title: 'قابل للتكيف', desc: 'قادر على العمل بشكل مستقل أو كجزء من فريق', proof: 'خبرة محاور ميداني، تدريب، عمل مشاريع' }
+        ]
+      }
     };
 
-    const fieldWork = {
-      en: [
-        { task: "Deliver training sessions", desc: "Run hands-on Copilot workshops on-site", icon: "🎯" },
-        { task: "User support", desc: "Help users directly with questions and issues", icon: "🤝" },
-        { task: "Collect feedback", desc: "Talk to real users, understand their needs", icon: "📋" },
-        { task: "Identify champions", desc: "Spot enthusiastic users who can help others", icon: "⭐" },
-        { task: "Stakeholder meetings", desc: "Brief managers on progress, address concerns", icon: "👔" },
-        { task: "Troubleshoot issues", desc: "Work with IT to resolve access or technical problems", icon: "🔧" }
-      ],
-      ar: [
-        { task: "تقديم جلسات التدريب", desc: "إدارة ورش عمل Copilot العملية في الموقع", icon: "🎯" },
-        { task: "دعم المستخدمين", desc: "مساعدة المستخدمين مباشرة في أسئلتهم ومشاكلهم", icon: "🤝" },
-        { task: "جمع الملاحظات", desc: "التحدث مع المستخدمين الحقيقيين، فهم احتياجاتهم", icon: "📋" },
-        { task: "تحديد الأبطال", desc: "اكتشاف المستخدمين المتحمسين الذين يمكنهم مساعدة الآخرين", icon: "⭐" },
-        { task: "اجتماعات أصحاب المصلحة", desc: "إطلاع المديرين على التقدم، معالجة المخاوف", icon: "👔" },
-        { task: "حل المشاكل التقنية", desc: "العمل مع تقنية المعلومات لحل مشاكل الوصول أو التقنية", icon: "🔧" }
-      ]
-    };
+    let lang = 'en';
+    let activeTab = 'office';
 
-    const skills = {
-      en: [
-        { skill: "Technical Background", desc: "Computer Science degree, Python, Java, SQL — I understand the technical side", icon: "💻", proof: "Built ML pipelines, API integrations, automation tools" },
-        { skill: "AI & Copilot Experience", desc: "Hands-on experience with LLMs and prompt engineering", icon: "🤖", proof: "Microsoft Copilot Ambassador, built AI-powered tools" },
-        { skill: "Training & Communication", desc: "Can explain technical concepts in simple terms", icon: "🎤", proof: "Delivered workshops, demos, and AI productivity sessions" },
-        { skill: "Bilingual (Arabic/English)", desc: "Native Arabic speaker, fluent in English", icon: "🌍", proof: "Can deliver content in both languages" },
-        { skill: "Data & Reporting", desc: "Comfortable with data analysis and creating reports", icon: "📊", proof: "Experience with data extraction, Excel pipelines, structured outputs" },
-        { skill: "Adaptable", desc: "Can work independently or as part of a team", icon: "🔄", proof: "Field interviewer experience, internship, project work" }
-      ],
-      ar: [
-        { skill: "خلفية تقنية", desc: "شهادة علوم حاسب، Python، Java، SQL — أفهم الجانب التقني", icon: "💻", proof: "بناء خطوط ML، تكاملات API، أدوات أتمتة" },
-        { skill: "خبرة AI و Copilot", desc: "خبرة عملية مع نماذج اللغة وهندسة الأوامر", icon: "🤖", proof: "سفير Microsoft Copilot، بناء أدوات مدعومة بالذكاء الاصطناعي" },
-        { skill: "التدريب والتواصل", desc: "قادر على شرح المفاهيم التقنية بمصطلحات بسيطة", icon: "🎤", proof: "قدمت ورش عمل وعروض توضيحية وجلسات إنتاجية AI" },
-        { skill: "ثنائي اللغة (عربي/إنجليزي)", desc: "متحدث عربي أصلي، طليق في الإنجليزية", icon: "🌍", proof: "قادر على تقديم المحتوى بكلتا اللغتين" },
-        { skill: "البيانات والتقارير", desc: "مرتاح مع تحليل البيانات وإنشاء التقارير", icon: "📊", proof: "خبرة في استخراج البيانات، خطوط Excel، مخرجات منظمة" },
-        { skill: "قابل للتكيف", desc: "قادر على العمل بشكل مستقل أو كجزء من فريق", icon: "🔄", proof: "خبرة محاور ميداني، تدريب، عمل مشاريع" }
-      ]
-    };
+    const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+    const svg = (name) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">${ICONS[name]}</svg>`;
+
+    function renderItem(tab, item) {
+      return `
+        <li class="item">
+          ${item.icon ? `<span class="icon" aria-hidden="true">${item.icon}</span>` : ''}
+          <div>
+            <h3>${esc(item.title)}</h3>
+            <p>${esc(item.desc)}</p>
+            ${item.proof ? `<p class="proof">${esc(item.proof)}</p>` : ''}
+          </div>
+        </li>`;
+    }
 
     function render() {
       const t = content[lang];
-      const isAr = lang === 'ar';
-      
-      let tabContent = '';
-      
-      if (activeTab === 'office') {
-        tabContent = `
-          <div class="flex items-center gap-2 mb-4">
-            <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
-            <h3 class="text-white font-semibold">${t.officeTitle}</h3>
-          </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-            ${officeWork[lang].map(item => `
-              <div class="bg-slate-700/30 rounded-xl p-4 border border-slate-600/30">
-                <h4 class="text-white font-medium text-sm mb-1">${item.task}</h4>
-                <p class="text-slate-400 text-xs">${item.desc}</p>
-              </div>
-            `).join('')}
-          </div>
-          <div class="mt-4 p-3 bg-blue-500/10 rounded-lg border border-blue-500/20">
-            <p class="text-blue-300 text-xs">💻 ${t.officeNote}</p>
-          </div>
-        `;
-      } else if (activeTab === 'field') {
-        tabContent = `
-          <div class="flex items-center gap-2 mb-4">
-            <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-            <h3 class="text-white font-semibold">${t.fieldTitle}</h3>
-          </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-            ${fieldWork[lang].map(item => `
-              <div class="bg-slate-700/30 rounded-xl p-4 border border-slate-600/30">
-                <div class="flex items-start gap-3">
-                  <span class="text-xl">${item.icon}</span>
-                  <div>
-                    <h4 class="text-white font-medium text-sm mb-1">${item.task}</h4>
-                    <p class="text-slate-400 text-xs">${item.desc}</p>
-                  </div>
-                </div>
-              </div>
-            `).join('')}
-          </div>
-          <div class="mt-4 p-3 bg-amber-500/10 rounded-lg border border-amber-500/20">
-            <p class="text-amber-300 text-xs">👤 ${t.fieldNote}</p>
-          </div>
-        `;
-      } else if (activeTab === 'skills') {
-        tabContent = `
-          <div class="flex items-center gap-2 mb-4">
-            <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-            <h3 class="text-white font-semibold">${t.skillsTitle}</h3>
-          </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-            ${skills[lang].map(item => `
-              <div class="bg-slate-700/30 rounded-xl p-4 border border-slate-600/30">
-                <div class="flex items-start gap-3">
-                  <span class="text-xl">${item.icon}</span>
-                  <div>
-                    <h4 class="text-white font-medium text-sm">${item.skill}</h4>
-                    <p class="text-slate-400 text-xs mt-1">${item.desc}</p>
-                    <p class="text-emerald-400 text-xs mt-2 italic">${item.proof}</p>
-                  </div>
-                </div>
-              </div>
-            `).join('')}
-          </div>
-        `;
-      }
+      const accent = ACCENT[activeTab];
+      document.documentElement.lang = lang;
+      document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+      document.title = `${t.title} | ${t.preparedBy}`;
 
+      const note = t.notes[activeTab];
       document.getElementById('app').innerHTML = `
-        <div class="${isAr ? 'rtl' : 'ltr'}">
-          <div class="flex justify-between items-start mb-6">
-            <div>
-              <h1 class="text-2xl font-bold text-white mb-1">${t.title}</h1>
-              <p class="text-slate-400 text-sm">${t.subtitle}</p>
-              <p class="text-emerald-400 text-sm mt-1">${t.preparedBy}</p>
-            </div>
-            <button onclick="toggleLang()" class="px-3 py-1.5 bg-slate-700 rounded-lg text-sm font-medium text-white hover:bg-slate-600 transition-colors">
-              ${t.langToggle}
-            </button>
+        <header class="top">
+          <div>
+            <h1>${esc(t.title)}</h1>
+            <p class="subtitle">${esc(t.subtitle)}</p>
+            <p class="author">${esc(t.preparedBy)}</p>
           </div>
+          <button class="lang" id="lang" type="button" lang="${lang === 'en' ? 'ar' : 'en'}">${esc(t.langToggle)}</button>
+        </header>
 
-          <div class="flex gap-2 mb-4 flex-wrap">
-            <button onclick="setTab('office')" class="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all ${activeTab === 'office' ? 'bg-white text-slate-900' : 'bg-slate-700/50 text-slate-300 hover:bg-slate-700'}">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
-              ${t.tabs.office}
-            </button>
-            <button onclick="setTab('field')" class="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all ${activeTab === 'field' ? 'bg-white text-slate-900' : 'bg-slate-700/50 text-slate-300 hover:bg-slate-700'}">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-              ${t.tabs.field}
-            </button>
-            <button onclick="setTab('skills')" class="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all ${activeTab === 'skills' ? 'bg-white text-slate-900' : 'bg-slate-700/50 text-slate-300 hover:bg-slate-700'}">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-              ${t.tabs.skills}
-            </button>
-          </div>
-
-          <div class="bg-slate-800/50 rounded-2xl border border-slate-700/50 p-5">
-            ${tabContent}
-          </div>
+        <div role="tablist" aria-label="${esc(t.title)}">
+          ${TAB_ORDER.map((id) => `
+            <button role="tab" id="tab-${id}" aria-controls="panel" type="button"
+              aria-selected="${id === activeTab}" tabindex="${id === activeTab ? 0 : -1}" data-tab="${id}">
+              ${svg(id)}${esc(t.tabs[id])}
+            </button>`).join('')}
         </div>
-      `;
+
+        <main class="panel" id="panel" role="tabpanel" aria-labelledby="tab-${activeTab}">
+          <div class="panel-head accent-${accent}">
+            ${svg(activeTab)}
+            <h2>${esc(t.titles[activeTab])}</h2>
+          </div>
+          <ul class="grid">
+            ${items[activeTab][lang].map((i) => renderItem(activeTab, i)).join('')}
+          </ul>
+          ${note ? `<p class="note accent-${accent}">${esc(note)}</p>` : ''}
+        </main>`;
     }
 
-    function toggleLang() {
-      lang = lang === 'en' ? 'ar' : 'en';
-      render();
-    }
+    document.getElementById('app').addEventListener('click', (e) => {
+      if (e.target.closest('#lang')) {
+        lang = lang === 'en' ? 'ar' : 'en';
+        render();
+        document.getElementById('lang').focus();
+        return;
+      }
+      const tab = e.target.closest('[role="tab"]');
+      if (tab) {
+        activeTab = tab.dataset.tab;
+        render();
+        document.getElementById(`tab-${activeTab}`).focus();
+      }
+    });
 
-    function setTab(tab) {
-      activeTab = tab;
+    document.getElementById('app').addEventListener('keydown', (e) => {
+      const tab = e.target.closest('[role="tab"]');
+      if (!tab) return;
+      const rtl = document.documentElement.dir === 'rtl';
+      const step = { ArrowRight: rtl ? -1 : 1, ArrowLeft: rtl ? 1 : -1 }[e.key];
+      if (!step && e.key !== 'Home' && e.key !== 'End') return;
+      e.preventDefault();
+      const i = TAB_ORDER.indexOf(activeTab);
+      activeTab = e.key === 'Home' ? TAB_ORDER[0]
+        : e.key === 'End' ? TAB_ORDER[TAB_ORDER.length - 1]
+        : TAB_ORDER[(i + step + TAB_ORDER.length) % TAB_ORDER.length];
       render();
-    }
+      document.getElementById(`tab-${activeTab}`).focus();
+    });
 
     render();
   </script>
